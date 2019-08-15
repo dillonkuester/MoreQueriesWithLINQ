@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -184,6 +185,29 @@ namespace MoreQueriesWithLINQ
                     Console.WriteLine("\t" + item.Name + "\t" + item.Department + "\t" + item.Country);
                 }
             }
+
+            Console.ForegroundColor = ConsoleColor.White;
+            ArrayList objType = new ArrayList();
+            objType.Add("JOHN");
+            objType.Add("JOE");
+            objType.Add("RANDY");
+            objType.Add(1);
+            //return the string objects in the array list
+            IEnumerable<string> resultOfType = objType.OfType<string>();
+            foreach (var item in resultOfType)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            int[] numarray = new int[] { 1, 2, 3, 4 };
+            var resultofAsEnumerable = numarray.AsEnumerable();
+            foreach (var number in resultofAsEnumerable)
+            {
+                Console.WriteLine(number);
+            }
+
+
                 Console.ReadLine();
             }
         
